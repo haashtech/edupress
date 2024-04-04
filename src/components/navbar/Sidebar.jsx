@@ -7,7 +7,17 @@ import ToggleBar from "./ToggleBar";
 import SearchBar from "../searchBar/SearchBar";
 
 function Sidebar({}) {
-  const { isToggled, handleNavItemClick, openDropdown } = useOpen();
+  const { isToggled,setIsToggled, handleNavItemClick, openDropdown } = useOpen();
+
+  const handleClick = (item) => {
+   
+    if(item.name !== "Page"){
+      setIsToggled(!isToggled)
+    } else {
+       handleNavItemClick(item.id)
+    }
+    
+  }
 
   return (
     <div className="">
@@ -28,7 +38,7 @@ function Sidebar({}) {
                         isToggled ? "scale-100 " : ""
                       }`}
                       to={item.path}
-                      onClick={() => handleNavItemClick(item.id)}
+                      onClick={() => handleClick(item)}
                       key={index}
                     >
                       {item.name}
