@@ -15,7 +15,7 @@ function Sidebar({}) {
       <div
         className={`${
           isToggled ? "h-screen pt-10 " : "h-0"
-        } flex items-center flex-col transition-all duration-300 bg-slate-400 w-screen fixed top-20 bottom-0 left-0`}
+        } flex items-center flex-col transition-all duration-300 bg-slate-400 w-screen fixed top-[4.7rem] bottom-0 left-0`}
       >
         <ul className="grid sm:grid-cols-2 grid-cols-1 ">
           {isToggled && (

@@ -3,16 +3,12 @@ import React from "react";
 function FeaturedCourses() {
 
     const coursesList = [
-        { id: 1, by:"by Determined-Poitras", title: "Art & Design", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img1.png' },
-        { id: 2, by:"by Determined-Poitras", title: "Development", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img2.png' },
-        { id: 3, by:"by Determined-Poitras", title: "Communication", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img3.png' },
-        { id: 4, by:"by Determined-Poitras", title: "Videography", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img4.png' },
-        { id: 5, by:"by Determined-Poitras", title: "Photography", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img5.png' },
-        { id: 6, by:"by Determined-Poitras", title: "Marketing", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img6.png' },
-        { id: 7, by:"by Determined-Poitras", title: "Content Writing", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img7.png' },
-        { id: 8, by:"by Determined-Poitras", title: "Finance", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img8.png' },
-        { id: 9, by:"by Determined-Poitras", title: "Science", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img9.png' },
-        { id: 10, by:"by Determined-Poitras", title: "Network", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/img10.png' }
+        { id: 1, by:"Determined-Poitras", title: "Create an LMS Website with LearnPress", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/Image-1.png' },
+        { id: 2, by:"Determined-Poitras", title: "Design a website with ThimPress", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/Image-2.png' },
+        { id: 3, by:"Determined-Poitras", title: "Create an LMS Website with LearnPress", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/Image-3.png' },
+        { id: 4, by:"Determined-Poitras", title: "Create an LMS Website with LearnPress", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/Image-4.png' },
+        { id: 5, by:"Determined-Poitras", title: "Create an LMS Website with LearnPress", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/Image5.png' },
+        { id: 6, by:"Determined-Poitras", title: "Create an LMS Website with LearnPress", weeks:"2Weeks", students:"156 students", price:"$52", offer:"free", des:"view more", image: '/images/home/img/Image.png' },
     ];
   return (
     <div className="section-container sm:py-24 py-16">
@@ -21,24 +17,46 @@ function FeaturedCourses() {
         <p className="text-sm">Explore our Popular Courses</p>
       </div>
       {/* cards */}
-      <div className='grid lg:grid-cols-3  md:grid-cols-4 grid-cols-2  gap-5'>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className='grid md:grid-cols-3 sm:grid-cols-2 justify-between items-center gap-5'>
+      {
+        coursesList && coursesList.map((item,index) => (
+        
+        <div key={item.id} className="card over:shadow-lg hover:scale-95 duration-300 cursor-pointer">
         <figure>
           <img
-            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
+            src={item.image}
+            alt={item.title}
+            className="p-1"
           />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
+        <div className="card-body space-y-2">
+          <small className="card-normal">by <span className="font-semibold">{item.by}</span></small>
+          <h1 className="text-lg font-semibold hover:text-primary">{item.title}</h1>
+          <div className="flex gap-3">
+            <small className="flex items-center text-xs gap-1">
+              <img src="/images/home/img/week.png" alt={item.weeks} />
+              {item.weeks}
+            </small>
+            <small className="flex items-center text-xs gap-1">
+              <img src="/images/home/img/std.png" alt={item.students} />
+              {item.students}
+            </small>
+          </div>
+          <div className="flex pt-2 justify-between card-actions ">
+          <div className="space-x-2">
+              <small><del className="text-[#9D9D9D]">{item.price}</del></small>
+              <small className="text-success">{item.offer} </small>
+            </div>
+            <div className="">
+              <span className="">View more</span>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-      
+    
+        ))
+      }
+        </div>
     </div>
   );
 }
