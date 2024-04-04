@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Exo", sans-serif;
+}
+
+.section-navbar{
+    @apply py-5 mx-auto xl:px-40 px-4
+  }
+
+.section-container{
+    @apply max-w-screen-2xl container mx-auto lg:px-40 sm:px-11 px-10
+  }
+
+  .subtitle{
+    @apply  uppercase  font-medium text-lg
+  }
+  .title{
+    @apply  font-bold text-4xl capitalize select-none
+  }
