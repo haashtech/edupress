@@ -4,7 +4,7 @@ import { IoStarOutline, IoStarSharp } from 'react-icons/io5';
 
 import replay from '/images/home/img/replay.png'
 import PaginationButtons from '../courses/PaginationButtons';
-import useReviewFetcher from '../courses/useReviewFetcher ';
+import useReviewFetcher from '../../customeHooks/useReviewFetcher ';
 
 function Reviews() {
     const { loading, pages, totalPages, currentPage, setCurrentPage } =

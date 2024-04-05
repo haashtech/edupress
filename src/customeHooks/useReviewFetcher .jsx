@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { review } from "./CourseList"; // Import the review array
+import { review } from "../components/courses/CourseList";
 
 const useReviewFetcher = () => {
   const totalPages = Math.ceil(review.length / 3); // Now showing 3 reviews per page

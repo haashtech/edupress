@@ -3,7 +3,7 @@ import PaginationButtons from "../../components/courses/PaginationButtons";
 import { coursesList } from "../../components/courses/CourseList";
 import CourseCategory from "../../components/courses/CourseCategory";
 import CourseCard from "../../components/courses/CourseCard ";
-import useDataFetcher from "../../components/courses/useDataFetcher";
+import useDataFetcher from "../../customeHooks/useDataFetcher";
 
 function Courses() {
   const { loading, pages, totalPages, currentPage, setCurrentPage } =

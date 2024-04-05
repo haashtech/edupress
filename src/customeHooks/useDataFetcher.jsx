@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { coursesList } from "./CourseList"; // Import the coursesList array
+import { coursesList } from "../components/courses/CourseList";
 
 const useDataFetcher = () => {
   const totalPages = Math.ceil(coursesList.length / 6); // Calculate total pages based on the number of items per page

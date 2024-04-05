@@ -4,6 +4,8 @@ import About from "../pages/Home/About";
 import Root from "../layout/Root";
 import Courses from "../pages/courses/Courses";
 import SingleCourseView from "../pages/courses/SingleCourseView";
+import Blogs from "../pages/blogs/Blogs";
+import SingleBlogView from "../pages/blogs/SingleBlogView";
 
 const router = createBrowserRouter(
     [
@@ -28,6 +30,16 @@ const router = createBrowserRouter(
                     path:"/courses/:courseId",
                     element: <SingleCourseView/>
                 }
+                ,
+                {
+                    path:"/blogs",
+                    element: <Blogs/>
+                },
+                {
+                    path:"/blogs/:blogId",
+                    element: <SingleBlogView/>
+                }
+                ,
             ]
 
         }

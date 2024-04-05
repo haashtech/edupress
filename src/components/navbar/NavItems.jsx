@@ -12,7 +12,7 @@ export const Navitems = [
     {
       id: 3,
       name: "Blog",
-      path: "/blog"
+      path: "/blogs"
     },
     {
       id: 4,
