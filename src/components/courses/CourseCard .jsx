@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CourseCard ({item}) {
   return (
     <div className="grid " key={item.id}>
+      <Link to={`/courses/${item.id}`}>
       <div className="card md:w-[100%] w-[100%] h-52 card-side border">
         <figure>
           <img
@@ -52,6 +54,7 @@ function CourseCard ({item}) {
           </div>
        </div>
       </div>
+      </Link>
     </div>
   )
 }

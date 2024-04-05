@@ -25,7 +25,7 @@ function CourseCategory() {
                 <div className="space-x-3 gap-2 space-y-2 flex justify-between" key={item.id}>
                     <div className="space-x-3">
                     <input type="checkbox" name={item.name} id={item.name} className='cursor-pointer'/>
-                    <label htmlFor={item.id} className='cursor-pointer'>{item.name}</label><br/>
+                    <span className='cursor-pointer'>{item.name}</span><br/>
                     </div>
                     <span className='text-sm'>{item.count}</span>
                 </div>
@@ -42,7 +42,7 @@ function CourseCategory() {
                 <div className="space-x-3 gap-2 space-y-2 flex justify-between" key={item.id}>
                 <div className="space-x-3">
                 <input type="checkbox" name={item.name} id={item.name} className='cursor-pointer'/>
-                <label htmlFor={item.id} className='cursor-pointer'>{item.name}</label><br/>
+                <span className='cursor-pointer'>{item.name}</span><br/>
                 </div>
                 <span className='text-sm'>{item.count}</span>
             </div>
@@ -58,7 +58,7 @@ function CourseCategory() {
                 <div className="space-x-3 gap-2 space-y-2 flex justify-between" key={item.id}>
                     <div className="space-x-3">
                     <input type="checkbox" name={item.name} id={item.name} className='cursor-pointer'/>
-                    <label htmlFor={item.id} className='cursor-pointer'>{item.name}</label><br/>
+                    <span className='cursor-pointer'>{item.name}</span><br/>
                     </div>
                     <span className='text-sm'>{item.count}</span>
                 </div>
@@ -87,7 +87,7 @@ function CourseCategory() {
                 <div className="space-x-3 gap-2 space-y-2 flex justify-between" key={item.id}>
                     <div className="space-x-3">
                     <input type="checkbox" name={item.name} id={item.name} className='cursor-pointer'/>
-                    <label htmlFor={item.id} className='cursor-pointer'>{item.name}</label><br/>
+                    <span className='cursor-pointer'>{item.name}</span><br/>
                     </div>
                     <span className='text-sm'>{item.count}</span>
                 </div>
