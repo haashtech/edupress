@@ -1,12 +1,15 @@
 import React from 'react'
 import { useOpen } from '../../contextApi/OpenProvider'
 import { CiSearch } from 'react-icons/ci'
+import { Link } from 'react-router-dom';
 
 function SearchBar() {
     const {setOpensearchbar , opensearchbar} = useOpen();
   return (
     <div className="relative flex  md:items-center gap-1 mt-5 md:mt-0 ">
-          <button className="text-sm font-semibold md:block hidden">SignIn / Login</button>
+          <button className="text-sm font-semibold md:block hidden cursor-pointer ">
+            <Link to={'/register'}>SignIn / Login</Link>
+          </button>
           <button
             className={`bg-white z-50 w-7 h-7 flex items-center justify-center border text-primary border-primary  ${
               opensearchbar ? "" : ""

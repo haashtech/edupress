@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function FeaturedCourses() {
 
@@ -20,7 +21,7 @@ function FeaturedCourses() {
         <div className='grid md:grid-cols-3 sm:grid-cols-2 justify-between items-center gap-5'>
       {
         coursesList && coursesList.map((item,index) => (
-        
+          <Link to={`/courses/${item.id}`}>
         <div key={item.id} className="card over:shadow-lg hover:scale-95 duration-300 cursor-pointer">
         <figure>
           <img
@@ -53,7 +54,7 @@ function FeaturedCourses() {
           </div>
         </div>
       </div>
-    
+    </Link>
         ))
       }
         </div>

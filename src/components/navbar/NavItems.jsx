@@ -18,8 +18,8 @@ export const Navitems = [
       id: 4,
       name: "Page",
       childrens: [
-        { id: 1, name: "About Us", path: "/about-us" },
-        { id: 2, name: "Contact Us", path: "/contact-us" }
+        { id: 1, name: "Faq", path: "/faq" },
+        { id: 2, name: "Contactus", path: "/contactus" }
       ]
     },
     {

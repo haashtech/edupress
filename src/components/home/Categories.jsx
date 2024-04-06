@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 const categoryItems = [
@@ -27,6 +28,7 @@ function Categories() {
         <div className='grid lg:grid-cols-5  md:grid-cols-4 grid-cols-2  gap-5'>
             {
                 categoryItems.map((item,index) => (
+                 
                     <div className="flex flex-col space-y-2 rounded-lg justify-center hover:shadow-lg hover:scale-105 duration-300 cursor-pointer border sm:py-12 py-11 items-center">
                         <div className="flex">
                             <img src={item.image} alt="" />
@@ -36,6 +38,7 @@ function Categories() {
                             <small>{ item.des}</small>
                         </div>
                     </div>
+                 
                 ))
             }
         </div>

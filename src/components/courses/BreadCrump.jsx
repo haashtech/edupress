@@ -32,7 +32,11 @@ function BreadCrumb() {
             <ul className='section-container'>
                 {breadcrumbs.map((breadcrumb, index) => (
                     <li key={index}>
-                        <Link to={breadcrumb.path}>{breadcrumb.title}</Link>
+                        <Link to={breadcrumb.path}>
+                            {breadcrumb.title}
+                            </Link>
+                        {/* Render the path */}
+                        {/* <span>{breadcrumb.path}</span> */}
                     </li>
                 ))}
             </ul>

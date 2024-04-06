@@ -13,7 +13,7 @@ function Navbar() {
     openDropdown,
     opensearchbar,
     setOpensearchbar,
-    handleNavItemClick
+    handleNavItemClick,
   } = useOpen();
 
   return (
@@ -35,13 +35,23 @@ function Navbar() {
                   activeNavItem === item.id ? "text-primary" : "text-black"
                 }`}
               >
-                <Link
-                  to={item.path}
-                  onClick={() => handleNavItemClick(item.id)}
-                  className="cursor-pointer text-sm font-semibold"
-                >
-                  {item.name}
-                </Link>
+                {item.path ? (
+                  <Link
+                    to={item.path}
+                    className="cursor-pointer text-sm font-semibold"
+                    onClick={() => handleNavItemClick(item.id)}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <span
+                    className="cursor-pointer text-sm font-semibold"
+                    onClick={() => handleNavItemClick(item.id)}
+                  >
+                    {item.name}
+                  </span>
+                )}
+
                 {openDropdown === item.id && <Dropdowns item={item} />}
               </li>
             ))}
@@ -49,7 +59,7 @@ function Navbar() {
           {/* show in small screen */}
         </div>
         <div className="md:block hidden">
-        <SearchBar/>
+          <SearchBar />
         </div>
         <div className="md:hidden">
           <Sidebar />

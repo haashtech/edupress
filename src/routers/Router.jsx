@@ -6,6 +6,10 @@ import Courses from "../pages/courses/Courses";
 import SingleCourseView from "../pages/courses/SingleCourseView";
 import Blogs from "../pages/blogs/Blogs";
 import SingleBlogView from "../pages/blogs/SingleBlogView";
+import ContactUs from "../pages/contactus/ContactUs";
+import Faq from "../pages/faq/Faq";
+import Error from "../pages/error/Error";
+import Register from "../pages/register/Register";
 
 const router = createBrowserRouter(
     [
@@ -38,8 +42,23 @@ const router = createBrowserRouter(
                 {
                     path:"/blogs/:blogId",
                     element: <SingleBlogView/>
-                }
-                ,
+                },
+                {
+                    path:"/contactus",
+                    element: <ContactUs/>
+                },
+                {
+                    path:"/faq",
+                    element: <Faq/>
+                },
+                {
+                    path:"/register",
+                    element: <Register/>
+                },
+                {
+                    path:"*",
+                    element: <Error/>
+                },
             ]
 
         }

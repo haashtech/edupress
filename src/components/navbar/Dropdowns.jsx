@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useOpen } from "../../contextApi/OpenProvider";
 
 function Dropdowns({ item }) {
+
+  const {
+    setIsToggled,
+    handleNavItemClick,
+    isToggled
+  } = useOpen();
   return (
     <>
       {item.childrens && (
@@ -10,7 +17,7 @@ function Dropdowns({ item }) {
             <ul className="flex flex-col py-2 px-3 items-center">
               {item.childrens.map((child, idx) => (
                 <li key={idx} className="py-2">
-                  <Link to={child.path} className="text-white font-bold hover:text-slate-100">{child.name}</Link>
+                  <Link to={child.path} className="text-white font-bold hover:text-slate-100" onClick={() => {handleNavItemClick(item.id) || setIsToggled(!isToggled)}}>{child.name}</Link>
                 </li>
               ))}
             </ul>

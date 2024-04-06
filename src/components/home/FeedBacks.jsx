@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function FeedBacks() {
   const feeds = [
@@ -95,14 +96,14 @@ function FeedBacks() {
       {/* latest articles */}
       <div className="section-container pb-20">
       <div className=" w-full mb-10 flex flex-col md:items-start justify-center items-center">
-        <h2 className="text-[32px] font-semibold">Featured courses</h2>
+        <h2 className="text-[32px] font-semibold">Latest Articles</h2>
         <p className="text-sm">Explore our Popular Courses</p>
       </div>
       {/* cards */}
         <div className='grid md:grid-cols-3 sm:grid-cols-2 justify-between items-center gap-5'>
       {
         coursesList && coursesList.map((item,index) => (
-        
+          <Link to={`/blogs/${item.id}`}>
         <div key={item.id} className="card over:shadow-lg hover:scale-95 duration-300 cursor-pointer">
         <figure>
           <img
@@ -126,7 +127,7 @@ function FeedBacks() {
           </div>
         </div>
       </div>
-    
+          </Link>
         ))
       }
         </div>

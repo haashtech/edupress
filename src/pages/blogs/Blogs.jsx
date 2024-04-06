@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import PaginationButtons from '../../components/courses/PaginationButtons'
 import useBlogFetecher from '../../customeHooks/useBlogFetecher';
-import BlogCard from '../../components/blog/BlogCard';
+
+// imported  components
 import BlogGridView from '../../components/blog/BlogGridView';
 import BlogListView from '../../components/blog/BlogListView';
+
+// imported icons
+import { FaListUl, FaThList } from "react-icons/fa";
+import BlogCategory from '../../components/blog/BlogCategory';
 
 function Blogs() {
     const { loading, pages, totalPages, currentPage, setCurrentPage } =
@@ -18,9 +23,9 @@ function Blogs() {
     const renderSection = (key, item) => {
         switch (activeSection) {
           case "BlogGridView":
-            return <BlogGridView key={key} item={item} />;
+            return <BlogGridView key={key} pages={pages} />;
           case "BlogListView":
-            return <BlogListView key={key} item={item} />;
+            return <BlogListView key={key} pages={pages} />;
           default:
             return null;
         }
@@ -37,13 +42,15 @@ function Blogs() {
        className="border-b-[1px] border-b-black bg-transparent outline-none"
        placeholder="search"
      />
-     <img src="/images/home/menu.png" alt=""  onClick={() => handleClick('BlogGridView')} />
-     <img src="/images/home/filter.png" alt=""  onClick={() => handleClick('BlogListView')} />
+     
+     <span className='lg:tooltip' data-tip="This will change the display view to listing"><FaThList className={`${activeSection === "BlogGridView" ? "text-primary" : ""} cursor-pointer hover:scale-95 transition-all lg:tooltip `} onClick={() => handleClick('BlogGridView')} /></span>
+     <span className='lg:tooltip' data-tip="This will change the display view to griding"><FaListUl className={`${activeSection === "BlogListView" ? "text-primary" : ""} cursor-pointer hover:scale-95 transition-all lg:tooltip `} onClick={() => handleClick('BlogListView')} /></span>
        </div>
        </div>
-       {pages.map((item, idx) => (
+       {/* {pages.map((item, idx) => (
          renderSection(idx, item)
-       ))}
+       ))} */}
+      {renderSection( pages)}
 
        <PaginationButtons
         totalPages={totalPages}
@@ -51,12 +58,12 @@ function Blogs() {
         setCurrentPage={setCurrentPage}
        />
      </div>
-     {/* <div className="md:w-[30%] ps-5">
-
-       <CourseCategory 
-       
+     <div className="md:w-[30%] ps-5">
+      
+       <BlogCategory 
        />
-     </div> */}
+
+     </div>
    </div>
   </div>
   )

@@ -11,6 +11,7 @@ export const OpenProvider = ({ children }) => {
   const [isToggled, setIsToggled] = useState(null);
 
   const handleNavItemClick = (index) => {
+    
     setActiveNavItem(index);
     setOpenDropdown(openDropdown === index ? null : index);
   };

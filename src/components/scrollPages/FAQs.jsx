@@ -2,7 +2,7 @@ import React from "react";
 import { MdLock } from "react-icons/md";
 import Accordian, { AccordianItem } from "./Accodion";
 
-function FAQs() {
+function FAQs({status}) {
   return (
     <Accordian>
       <AccordianItem
